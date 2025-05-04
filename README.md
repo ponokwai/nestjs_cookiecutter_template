@@ -34,7 +34,7 @@ A production-ready NestJS application template with observability, Docker integr
 pip install cookiecutter
 
 # Generate your project
-cookiecutter git@github.com:PaystackHQ/cookiecutter-nestjs-template.git
+cookiecutter git@github.com:ponokwai/nestjs_cookiecutter_template.git
 ```
 
 ### Cookiecutter Prompts
