@@ -1,0 +1,7 @@
+{
+    "directory_name": "my-nest-app",
+    "project_name": "My NestJS App",
+    "description": "A NestJS starter template",
+    "author_name": "Patrick Onokwai",
+    "project_slug": "{{ cookiecutter.directory_name | lower | replace(' ', '-') | replace('_', '-') }}"
+}
