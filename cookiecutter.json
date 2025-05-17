@@ -1,7 +1,9 @@
 {
-    "directory_name": "my-nest-app",
-    "project_name": "My NestJS App",
-    "description": "A NestJS starter template",
+    "app_name": "My NestJs App",
+    "description": "A brief description of your project",
     "author_name": "Patrick Onokwai",
-    "project_slug": "{{ cookiecutter.directory_name | lower | replace(' ', '-') | replace('_', '-') }}"
+    "project_slug": "{{ cookiecutter.app_name | lower | replace(' ', '-') | replace('.', '-') | replace('_', '-') | trim }}",
+    "team_namespace": "platform-engineering",
+    "production_branch": "main",
+    "staging_branch": "dev"
 }
