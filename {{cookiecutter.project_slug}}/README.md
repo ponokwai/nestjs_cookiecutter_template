@@ -1,5 +1,5 @@
 <h1 align="center">
-  A Patrick Onokwai Project
+  A Paystack Project
 </h1>
 
 # {{ cookiecutter.app_name }}

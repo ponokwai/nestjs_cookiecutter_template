@@ -1,10 +1,9 @@
+// commitlint.config.js
 /**
  * Commitlint configuration
  * @see https://commitlint.js.org/#/reference-configuration
  */
-import type { UserConfig } from '@commitlint/types';
-
-const config: UserConfig = {
+module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'body-max-line-length': [2, 'always', 100],
@@ -33,5 +32,3 @@ const config: UserConfig = {
     ],
   },
 };
-
-export default config;
