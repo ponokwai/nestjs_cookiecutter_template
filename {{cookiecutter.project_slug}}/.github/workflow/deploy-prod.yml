@@ -8,11 +8,11 @@ on:
 env:
   ENVIRONMENT: production
   AWS_REGION: eu-west-1
-  CLUSTER: paystack-production
+  CLUSTER: rickwai-production
   NAMESPACE: {{cookiecutter.team_namespace}} # The namespace for your app
   APP_NAME: {{cookiecutter.project_slug}} # The name of your app
-  ARGOCD_URL: argocd.private.paystack.co
-  RUNNER: paystack-production-{{cookiecutter.team_namespace}} # The namespace for your app
+  ARGOCD_URL: argocd.private.rickwai.co
+  RUNNER: rickwai-production-{{cookiecutter.team_namespace}} # The namespace for your app
   DOCKERFILE_PATH: . # Update if your Dockerfile is at a different path. Eg: './packages/tps-api'
 
 {% raw %}
@@ -25,7 +25,7 @@ jobs:
   # so using this job to expose env vars as outputs
   vars:
     name: Set up environment variables
-    runs-on: paystack-production-{{cookiecutter.team_namespace}} # The namespace for your app
+    runs-on: rickwai-production-{{cookiecutter.team_namespace}} # The namespace for your app
     {% raw %}
     outputs:
       environment: ${{ env.ENVIRONMENT }}
@@ -44,7 +44,7 @@ jobs:
 {% raw %}
   build-push-image:
     name: Build and push docker image to ECR
-    uses: PaystackHQ/common-github-actions/.github/workflows/build-push-docker-image.yml@v1.8.1
+    uses: rickwaiHQ/common-github-actions/.github/workflows/build-push-docker-image.yml@v1.8.1
     needs:
       - vars
     with:
@@ -63,7 +63,7 @@ jobs:
 
   deploy-app:
     name: Deploy app to cluster
-    uses: PaystackHQ/common-github-actions/.github/workflows/eks-deploy-app.yml@v1.3.0
+    uses: rickwaiHQ/common-github-actions/.github/workflows/eks-deploy-app.yml@v1.3.0
     needs:
       - vars
       - build-push-image
@@ -86,7 +86,7 @@ jobs:
       - vars
       - build-push-image
       - deploy-app
-    runs-on: paystack-production-{{cookiecutter.team_namespace}} # The namespace for your app
+    runs-on: rickwai-production-{{cookiecutter.team_namespace}} # The namespace for your app
     steps:
     {% raw %}
       - name: Send failure notification
