@@ -44,7 +44,7 @@ cookiecutter git@github.com:PaystackHQ/cookiecutter-nestjs-template.git
 During project generation, you'll be prompted for several values:
 - `app_name`: The name of your app (default: My NestJs App)
 - `description`: A short description of your project
-- `author_name`: Your name or organization name (default: Paystack)
+- `author_name`: Your name or organization name (default: Patrick Onokwai)
 - `project_slug`: The slugified name of your project (automatically generated from app_name)
 - `team_namespace`: The devops namespace for your app (default: platform-engineering)
 - `production_branch`: The branch to be used for production deployment (default: main)
